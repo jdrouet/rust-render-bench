@@ -1,0 +1,16 @@
+use crate::TodoItem;
+use sailfish::TemplateOnce;
+
+#[derive(TemplateOnce)]
+#[template(path = "page.html")]
+struct Page {
+    list: Vec<TodoItem>,
+}
+
+pub fn render(todo_list: Vec<TodoItem>) -> Result<String, String> {
+    Page { list: todo_list }.render_once().map_err(|err| err.to_string())
+}
+
+pub async fn render_async(todo_list: Vec<TodoItem>) -> Result<String, String> {
+    render(todo_list)
+}

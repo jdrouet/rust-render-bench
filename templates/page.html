@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <main>
+        <h1>My TODO list</h1>
+
+        <% for item in &list { %>
+        <article>
+            <% if item.done { %>
+            <input type="checkbox" checked="checked" />
+            <% } else { %>
+            <input type="checkbox" checked="" />
+            <% } %>
+            <label><%= item.content %></label>
+        </article>
+        <% } %>
+    </main>
+</body>
+</html>

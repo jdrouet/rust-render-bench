@@ -1,0 +1,26 @@
+[package]
+name = "rust-render-bench"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+sailfish = { version = "0.6" }
+yew = { version = "0.20", features = ["ssr"] }
+
+[dev-dependencies]
+tokio = { version = "*", features = ["full"] }
+criterion = { version = "0.4", features = ["async_tokio", "async_futures"] }
+
+[[bench]]
+name = "yew"
+harness = false
+
+[[bench]]
+name = "sailfish"
+harness = false
+
+[[bench]]
+name = "concat"
+harness = false
