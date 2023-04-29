@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+askama = { version = "0.12" }
 sailfish = { version = "0.6" }
 yew = { version = "0.20", features = ["ssr"] }
 
@@ -19,6 +20,10 @@ harness = false
 
 [[bench]]
 name = "sailfish"
+harness = false
+
+[[bench]]
+name = "askama"
 harness = false
 
 [[bench]]

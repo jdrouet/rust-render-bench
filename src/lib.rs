@@ -1,3 +1,4 @@
+pub mod askama;
 pub mod concat;
 pub mod sailfish;
 pub mod yew;
